@@ -1,0 +1,8 @@
+.landingImage {
+    z-index: 0;
+}
+
+.landingText {
+    position: absolute;
+    z-index: 1;
+}

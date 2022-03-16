@@ -1,9 +1,9 @@
-import Header from '../../components/Header/header'
+import Header from '../components/Header/header'
 
 export default function Detail() {
     return (
     <>  
-        <Header/>
+        <Header theme={'black'}/>
         <div>Contact</div>
     </>
     )

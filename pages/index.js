@@ -1,10 +1,8 @@
 import Head from 'next/head'
-import Header from '../components/Header/header'
 import Landing from './landing/landing'
-import Container from '../components/Container/container'
 import { connectToDatabase } from '../lib/mongodb'
 
-export default function Home({projects}) {
+export default function Home({topProjects}) {
 
   return (
 <>
@@ -16,7 +14,7 @@ export default function Home({projects}) {
   </Head>
   <main>
       <Landing/>
-      {projects.map((project) =>(
+      {topProjects.map((project) =>(
       <div key={project._id}> 
           <div >{project.name}</div>
           <img src={project.media}/>
@@ -29,7 +27,7 @@ export default function Home({projects}) {
 
 export async function getServerSideProps() {
   const { db } = await connectToDatabase();
-  const projects = await db
+  const topProjects = await db
     .collection("projects")
     .find({top_project: true})
     .sort({ metacritic: -1 })
@@ -38,7 +36,7 @@ export async function getServerSideProps() {
 
   return {
     props: {
-      projects: JSON.parse(JSON.stringify(projects)),
+      topProjects: JSON.parse(JSON.stringify(topProjects)),
     },
   };
 }

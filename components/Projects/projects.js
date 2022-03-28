@@ -1,24 +1,21 @@
 import styles from './Projects.module.css'
+import ProjectCard from '../ProjectCard/ProjectCard'
 
 export default function Projects({projects}) {
   return (
     <>
-      <div className={styles.container}>
+    <div className={styles.container}>
       <h1>Cinéma</h1>
-     
       <div   className={styles.cardContainer}>
-     {projects.map((project) => (
-       project.sector === 'Cinéma' ?
-         (
-         <div>
-           <img src={project.media} width='125px' height='200px'/>
-           <div key={project._id}>{project.name}</div>
-         </div>
-         )
-         : null 
-         ))
-        }
-         </div>
+      {projects.map((project) => (
+        project.sector === 'Cinéma' ?
+          (
+          <ProjectCard project={project}/>          
+          )
+          : null 
+          ))
+          }
+    </div>
    <h1>Musique</h1>
    {projects.map((project) => (
      project.sector === 'Musique' ? 

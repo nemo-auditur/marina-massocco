@@ -1,0 +1,23 @@
+.cardContainer{
+    position: relative;
+    text-align: center;
+    color: black;
+    width: 200px;
+}
+
+.cardPicture:hover {
+    webkit-filter: blur(2px); /* Chrome, Safari, Opera */
+    filter: blur(2px);
+}
+
+.cardText{
+    display: none;
+}
+
+.cardContainer:hover .cardText{
+    display: block;
+    color: black;
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+}

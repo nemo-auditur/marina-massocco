@@ -1,8 +1,10 @@
+import styles from './ProjectCard.module.css'
+
 export default function ProjectCard ({project}) {
   return (
-    <div>
-      <img src={project.media} width='125px' height='200px'/>
-      <div key={project._id}>{project.name}</div>
+    <div className={styles.cardContainer}>
+      <img src={project.media} width="200px"className={styles.cardPicture}/>
+      <div key={project._id} className={styles.cardText}>{project.name}</div>
   </div>
   )
 }

@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Landing from './landing/landing'
 import { connectToDatabase } from '../lib/mongodb'
+import Header from '../components/Header/header'
 
 export default function Home({topProjects}) {
 
@@ -13,13 +14,8 @@ export default function Home({topProjects}) {
     <link href='https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap' rel="stylesheet"/>
   </Head>
   <main>
-      <Landing/>
-      {topProjects.map((project) =>(
-      <div key={project._id}> 
-          <div >{project.name}</div>
-          <img src={project.media}/>
-            </div>
-          ))}
+    <Header/>
+    <Landing topProjects={topProjects}/>
   </main>
 </>
   )

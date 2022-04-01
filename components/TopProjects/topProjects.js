@@ -1,8 +1,13 @@
 
-export default function Landingpage() {
+export default function Landingpage({topProjects}) {
     return (
       <>
-        <div></div>
+      {topProjects.map((project) =>(
+      <div key={project._id}> 
+          <div >{project.name}</div>
+          <img src={project.media}/>
+            </div>
+          ))}
       </>
     )
 }

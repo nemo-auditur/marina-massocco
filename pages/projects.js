@@ -1,11 +1,9 @@
-import Header from '../components/Header/header'
-import Projects from '../components/Projects/projects'
+import Projects from '../components/Projects/Projects'
 import { connectToDatabase } from '../lib/mongodb'
 
 export default function Detail({projects}) {
     return (
     <>
-      <Header theme={'black'}/>
       <Projects projects={projects}/>
     </>
     )
@@ -19,8 +17,7 @@ export async function getServerSideProps() {
     .sort({sector: 1})
     .limit(20)
     .toArray();
-
-    console.log(projects)
+    
   return {
     props: {
       projects: JSON.parse(JSON.stringify(projects)),

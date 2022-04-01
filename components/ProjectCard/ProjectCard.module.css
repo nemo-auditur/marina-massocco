@@ -3,11 +3,13 @@
     text-align: center;
     color: black;
     width: 200px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .cardPicture:hover {
     webkit-filter: blur(2px); /* Chrome, Safari, Opera */
-    filter: blur(2px);
+    filter: blur(4px);
 }
 
 .cardText{
@@ -16,8 +18,10 @@
 
 .cardContainer:hover .cardText{
     display: block;
-    color: black;
+    color: white;
     position: absolute;
-    bottom: 16px;
-    left: 16px;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
 }

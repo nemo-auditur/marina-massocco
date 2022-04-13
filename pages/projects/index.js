@@ -1,15 +1,15 @@
-import Projects from '../components/Projects/Projects'
-import { connectToDatabase } from '../lib/mongodb'
+import ProjectsLayout from '../../components/ProjectsLayout/ProjectsLayout'
+import { connectToDatabase } from '../../lib/mongodb'
 
-export default function Detail({projects}) {
+export default function Projects({projects}) {
     return (
     <>
-      <Projects projects={projects}/>
+      <ProjectsLayout projects={projects}/>
     </>
     )
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const { db } = await connectToDatabase();
   const projects = await db
     .collection("projects")

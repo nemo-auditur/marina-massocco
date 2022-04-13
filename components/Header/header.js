@@ -5,9 +5,7 @@ import styles from './Header.module.css'
 export default function Header (props){
 
   const [toggleMenu, setToggleMenu] = useState(false)
-  const [themMenu, setThemeMenu] = useState(props)
 
-  console.log(props)
   const toggleNavSmallScreen = () => {
     setToggleMenu(!toggleMenu)
   }
@@ -21,13 +19,13 @@ export default function Header (props){
           <div className={`${styles.menu_btn_burger} ${styles.open}`}></div>
         </div>
           <Link href="/">
-          <a className={styles.items}>Accueil</a>
+          <a className={styles.items}>ACCUEIL</a>
           </Link>
           <Link href="/projects">
-            <a className={styles.items}>Projets</a>
+            <a className={styles.items}>PROJETS</a>
           </Link>
           <Link href="/contact">
-            <a className={styles.items}>Contact</a>
+            <a className={styles.items}>CONTACT</a>
           </Link>
         </nav>
       : 

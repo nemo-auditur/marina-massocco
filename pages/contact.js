@@ -6,7 +6,7 @@ import Marina from '../public/images/marina.jpg'
 export default function Detail() {
     return (
     <>  
-    <Header/>
+    <Header theme='black'/>
         <div className={styles.container}>
             <div className={styles.blocImage}>
                 <Image
@@ -14,7 +14,6 @@ export default function Detail() {
                     src={Marina}
                     alt="Landing Page"
                     layout='responsive'
-
                     objectFit='cover'
                     objectPosition='center'
                     placeholder='Landing page author'/>
@@ -29,7 +28,7 @@ export default function Detail() {
                     <h2 className={styles.h2}>Contact</h2>
                     <div>marina@mail.fr</div>
                     <div>0700000000</div>
-                    <div>31 rue de l'adresse</div>
+                    <div>31 rue de paris</div>
                     <div>PARIS 75000</div>
                 </div>
             </div>

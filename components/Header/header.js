@@ -1,8 +1,9 @@
 import Link from 'next/link'
 import { useState } from 'react'
+import { getStaticProps } from '../../pages/projects';
 import styles from './Header.module.css'
 
-export default function Header (props){
+const Header = (props) => {
 
   const [toggleMenu, setToggleMenu] = useState(false)
 
@@ -12,20 +13,20 @@ export default function Header (props){
     return (
     <header >        
       {toggleMenu ?
-        <nav className={`${styles.container} ${styles.container_open}`}>
+        <nav className={props.theme === 'black'? `${styles.container} ${styles.container_open_black}`: `${styles.container} ${styles.container_open_white}`}>
         <div 
           className={`${styles.menu_btn} ${styles.open}`}
           onClick={() => toggleNavSmallScreen()}>
-          <div className={`${styles.menu_btn_burger} ${styles.open}`}></div>
+          <div className={props.theme === 'black' ? `${styles.menu_btn_burger_black} ${styles.open}` : `${styles.menu_btn_burger_white} ${styles.open}`}></div>
         </div>
           <Link href="/">
-          <a className={styles.items}>ACCUEIL</a>
+          <h1 className={styles.items}>ACCUEIL</h1>
           </Link>
           <Link href="/projects">
-            <a className={styles.items}>PROJETS</a>
+            <h1 className={styles.items}>PROJETS</h1>
           </Link>
           <Link href="/contact">
-            <a className={styles.items}>CONTACT</a>
+            <h1 className={styles.items}>CONTACT</h1>
           </Link>
         </nav>
       : 
@@ -33,10 +34,12 @@ export default function Header (props){
         <div 
           className={styles.menu_btn}
           onClick={ () => toggleNavSmallScreen()}>
-          <div className={styles.menu_btn_burger}></div>
+          <div className={props.theme === 'black' ? `${styles.menu_btn_burger_black}` : `${styles.menu_btn_burger_white}`}></div>
         </div>    
       </nav>
       }
     </header>
     )
 }
+
+export default Header

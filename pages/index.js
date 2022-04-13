@@ -14,7 +14,7 @@ export default function Home({topProjects}) {
     <link href='https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap' rel="stylesheet"/>
   </Head>
   <main>
-    <Header/>
+    <Header theme='white'/>
     <Landing topProjects={topProjects}/>
   </main>
 </>

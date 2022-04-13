@@ -1,9 +1,11 @@
+import Header from '../../components/Header/header'
 import ProjectsLayout from '../../components/ProjectsLayout/ProjectsLayout'
 import { connectToDatabase } from '../../lib/mongodb'
 
 export default function Projects({projects}) {
     return (
     <>
+      <Header theme='black'/>
       <ProjectsLayout projects={projects}/>
     </>
     )

@@ -30,7 +30,6 @@ export const getStaticProps = async (context) => {
     .find({_id : id})
     .limit(1)
     .toArray();
-    console.log('hello');
     return {
         props: {project :project}
     }

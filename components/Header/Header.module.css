@@ -144,3 +144,13 @@
 .open .menu_btn_burger_black::after {
   transform: rotate(-45deg) translate(35px, 35px);
 }
+
+
+@media (max-width: 800px) {
+  .container {
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+  }
+  
+}

@@ -6,7 +6,7 @@ import Marina from '../public/images/marina.jpg'
 export default function Detail() {
     return (
     <>  
-    <Header theme='black'/>
+    <Header theme='white'/>
         <div className={styles.container}>
             <div className={styles.blocImage}>
                 <Image

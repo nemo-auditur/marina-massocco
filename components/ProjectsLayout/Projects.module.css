@@ -1,11 +1,16 @@
 .container {
-  margin-top: 100px;
-  margin-left: 40px;
-  margin-right: 40px;
+  padding-top: 100px;
+  padding-left: 40px;
+  padding-right: 40px;
+  background: rgb(24,39,54);
+  background: linear-gradient(90deg, rgba(24,39,54,1) 36%, rgba(15,22,33,1) 88%);
+  color: white;
 }
 
 .cardContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-auto-flow: column;
+  grid-auto-columns: 21%;
+  overflow-x: auto;
   grid-gap: 30px;
 }

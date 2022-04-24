@@ -5,7 +5,7 @@ import { connectToDatabase } from '../../lib/mongodb'
 export default function Projects({projects}) {
     return (
     <>
-      <Header theme='black'/>
+      <Header theme='white'/>
       <ProjectsLayout projects={projects}/>
     </>
     )

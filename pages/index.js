@@ -1,7 +1,8 @@
 import Head from 'next/head'
-import Landing from './landing/landing'
 import { connectToDatabase } from '../lib/mongodb'
 import Header from '../components/Header/header'
+import Coverpage from '../components/Coverpage/coverpage'
+import TopProjects from '../components/TopProjects/topProjects'
 
 export default function Home({topProjects}) {
 
@@ -15,7 +16,8 @@ export default function Home({topProjects}) {
   </Head>
   <main>
     <Header theme='white'/>
-    <Landing topProjects={topProjects}/>
+    <Coverpage/>
+    <TopProjects topProjects={topProjects}/>
   </main>
 </>
   )

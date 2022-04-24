@@ -7,6 +7,10 @@ export default function Coverpage (){
     return (
     <>
     <div style={{height:'100vh'}}>
+      <div className={styles.textContainer}>        
+        <h1>Marina Massocco</h1>
+        <div>Costumière & styliste</div>
+      </div>
       <Image
         className={styles.landingImage}
         src={Coverimage}

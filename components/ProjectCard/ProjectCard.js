@@ -1,4 +1,3 @@
-
 import Image from 'next/image'
 import styles from './ProjectCard.module.css'
 import Link from 'next/link'

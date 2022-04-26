@@ -6,6 +6,14 @@ export default function Projects({projects}) {
   return (
     <>
     <div className={styles.container}>
+    <h1>Publicité</h1>
+      <div className={styles.cardContainer}>
+      {projects.map((project) => (
+        project.sector === 'Publicité' ? 
+        <div key={project._id}>{project.name}</div>
+        : null 
+      ))}
+      </div>  
       <h1>Cinéma</h1>
       <div className={styles.cardContainer}>
       {projects.map((project) => (
@@ -28,14 +36,6 @@ export default function Projects({projects}) {
       {projects.map((project) => (
         project.sector === 'Télévision' ? 
         <ProjectCard project={project}/>          
-        : null 
-      ))}
-      </div>
-      <h1>Publicité</h1>
-      <div className={styles.cardContainer}>
-      {projects.map((project) => (
-        project.sector === 'Publicité' ? 
-        <div key={project._id}>{project.name}</div>
         : null 
       ))}
       </div>

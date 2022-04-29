@@ -14,10 +14,19 @@ export default function Projects({projects}) {
         : null 
       ))}
       </div>  
-      <h1>Cinéma</h1>
+      <h1>Longs métrages</h1>
       <div className={styles.cardContainer}>
       {projects.map((project) => (
-        project.sector === 'Cinéma' ?
+        project.sector === 'Long métrage' ?
+          <ProjectCard project={project}/>          
+          : null 
+          ))
+          }
+      </div>
+      <h1>Courts métrages</h1>
+      <div className={styles.cardContainer}>
+      {projects.map((project) => (
+        project.sector === 'Court métrage' ?
           <ProjectCard project={project}/>          
           : null 
           ))

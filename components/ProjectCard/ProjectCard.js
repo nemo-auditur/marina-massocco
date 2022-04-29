@@ -16,10 +16,11 @@ export default function ProjectCard ({project}) {
     {project.media ? 
     <>
       <div 
-      key={project._id}
-      onClick={()=>{
-        modalBehaviour()
-      } }>
+        key={project._id}
+        className={styles.cardContainer}
+        onClick={()=>{
+          modalBehaviour()
+        } }>
       <Image 
         alt="front picture of the project"
         src={project.media}

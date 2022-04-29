@@ -50,6 +50,9 @@ export default function ProjectCard ({project}) {
             transition: {
               delay: 0.3
             }
+          }}
+          onClick={()=> {
+            modalBehaviour()
           }}>
             <motion.div 
               className={styles.modalContainer}
@@ -74,19 +77,18 @@ export default function ProjectCard ({project}) {
               }}
               >
               <div 
-                className={styles.closeButton}
+                className={styles.modalCloseButton}
                 onClick={()=> {
                   modalBehaviour()
                 }}> X</div>
                 <div className={styles.modalImage}>
-                  {/* <Image
+                  <Image
                     alt="front picture of the project"
                     src={project.media}
-                    className={styles.cardPicture}
-                    layout='responsive'
-                    width={150}
-                    height={200}
-                  /> */}
+                    layout='intrinsic'
+                    height={400}
+                    width={300}
+                  />
                 </div>
                 <div className={styles.modalText}>
                   <h1>{project.name}</h1>

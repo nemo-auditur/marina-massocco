@@ -8,11 +8,10 @@
 }
 
 .cardContainer {
-  display: grid;
+  display: inline-grid;
   grid-auto-flow: column;
-  grid-auto-columns: 16%;
   grid-gap: 30px;
-  overflow-y: scroll;
+  overflow-x: auto;
   overflow-y: hidden;
 }
 

@@ -1,14 +1,15 @@
-import Header from '../../components/Header/header'
-import ProjectsLayout from '../../components/ProjectsLayout/ProjectsLayout'
-import { connectToDatabase } from '../../lib/mongodb'
+import Layout from "../../components/TransitionLayout/TransitionLayout";
+import ProjectsLayout from "../../components/ProjectsLayout/ProjectsLayout";
+import { connectToDatabase } from "../../lib/mongodb";
 
-export default function Projects({projects}) {
-    return (
+export default function Projects({ projects }) {
+  return (
     <>
-      <Header theme='white'/>
-      <ProjectsLayout projects={projects}/>
+      <Layout>
+        <ProjectsLayout projects={projects} />
+      </Layout>
     </>
-    )
+  );
 }
 
 export async function getStaticProps() {
@@ -16,10 +17,10 @@ export async function getStaticProps() {
   const projects = await db
     .collection("projects")
     .find()
-    .sort({sector: 1})
+    .sort({ sector: 1 })
     .limit(20)
     .toArray();
-    
+
   return {
     props: {
       projects: JSON.parse(JSON.stringify(projects)),

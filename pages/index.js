@@ -1,10 +1,10 @@
 import Head from "next/head";
 import { connectToDatabase } from "../lib/mongodb";
 import Layout from '../components/TransitionLayout/TransitionLayout'
-import Coverpage from "../components/Coverpage/coverpage";
-import TopProjects from "../components/TopProjects/topProjects";
+import Coverpage from "../components/Coverpage";
+import ProjectsLayout from '../components/ProjectsLayout/ProjectsLayout'
 
-export default function Home({ topProjects }) {
+export default function Home({ projects }) {
   return (
     <>
       <Head>
@@ -22,7 +22,7 @@ export default function Home({ topProjects }) {
       <main>
         <Layout>
           <Coverpage />
-          <TopProjects topProjects={topProjects} />
+          <ProjectsLayout projects={projects}/>
         </Layout>
       </main>
     </>
@@ -31,16 +31,16 @@ export default function Home({ topProjects }) {
 
 export async function getServerSideProps() {
   const { db } = await connectToDatabase();
-  const topProjects = await db
-    .collection("projects")
-    .find({ top_project: true })
-    .sort({ metacritic: -1 })
-    .limit(20)
-    .toArray();
+  const projects = await db
+  .collection("projects")
+  .find()
+  .sort({ sector: 1 })
+  .limit(20)
+  .toArray();
 
-  return {
-    props: {
-      topProjects: JSON.parse(JSON.stringify(topProjects)),
-    },
-  };
+return {
+  props: {
+    projects: JSON.parse(JSON.stringify(projects)),
+  },
+};
 }

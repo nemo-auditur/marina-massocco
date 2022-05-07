@@ -2,9 +2,8 @@
     display: flex;
     padding-top: 120px;
     height: 100vh;
-    background: rgb(24,39,54);
-    background: linear-gradient(90deg, rgba(24,39,54,1) 36%, rgba(15,22,33,1) 88%);
-    color: white;
+    background: linear-gradient(10deg, rgba(56,141,154,1) 30%, rgba(0,0,0,0) 30%), linear-gradient(10deg, rgba(0,0,0,0)70%, rgba(56,141,154,1) 70%);
+    color: black;
 }
 
 .blocImage {

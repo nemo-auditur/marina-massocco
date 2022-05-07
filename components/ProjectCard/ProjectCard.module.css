@@ -2,27 +2,29 @@
     position: relative;
     text-align: center;
     color: black;
-    width: 250px;
+    width: 400px;
     margin-top: 20px;
     margin-bottom: 20px;
-}
-
-.cardPicture:hover {
-    webkit-filter: blur(2px); /* Chrome, Safari, Opera */
-    filter: blur(4px);
 }
 
 .cardText{
     display: none;
 }
 
+.cardPicture:hover{
+    webkit-filter: blur(2px); /* Chrome, Safari, Opera */
+    filter: blur(4px);
+}
+
 .cardContainer:hover .cardText{
     display: block;
-    color: white;
+    color: black;
     position: absolute;
+    font-size: 40px;
     top:50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    cursor:pointer;
 }
 
 /* Modal Styles */ 
@@ -47,14 +49,39 @@
     position: relative;
     width: 80%;
     height: 60%;
-    background-color: transparent;
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(90deg, rgba(24,39,54,1) 36%, rgba(15,22,33,1) 88%);    
-    backdrop-filter: blur(12px)
+    backdrop-filter: blur(12px);
+    border-radius: 4px;
 }
 
+/* Close button */
+
+.close {
+    position: absolute;
+    left: 32px;
+    top: 32px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
+  .close::before, .close::after {
+    position: absolute;
+    left: 15px;
+    content: "";
+    height: 40px;
+    width: 2px;
+    background: #111;
+  }
+  .close:before {
+    transform: rotate(45deg);
+  }
+  .close:after {
+    transform: rotate(-45deg);
+  }
+  
 /* Modal Mobile settings*/
 
 @media (max-width : 800px) {
